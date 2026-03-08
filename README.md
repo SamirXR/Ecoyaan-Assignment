@@ -1,6 +1,6 @@
 # Ecoyaan Checkout Flow
 
-> A minimal, elegant checkout experience built for the Ecoyaan Frontend Engineering Interview Assignment.
+> My submission for Ecoyaan Frontend Engineering Interview Assignment.
 
 ---
 
@@ -37,13 +37,13 @@ src/
 
 ### Key Architectural Decisions
 
-**Server-Side Rendering** — `app/page.tsx` is an async Server Component that fetches from the local `/api/cart` route at request time. The resolved data is passed as a prop to the client shell (`CheckoutClient`), hydrating Zustand's store on first load — no client-side loading flicker.
+**Server-Side Rendering** : `app/page.tsx` is an async Server Component that fetches from the local `/api/cart` route at request time. The resolved data is passed as a prop to the client shell (`CheckoutClient`), hydrating Zustand's store on first load — no client-side loading flicker.
 
-**Zustand over Context** — Context re-renders the entire subtree on every state change. Zustand's selector-based subscriptions mean only the components that consume a specific slice re-render, keeping the UI smooth as users update quantities.
+**Zustand over Context** : Context re-renders the entire subtree on every state change. Zustand's selector-based subscriptions mean only the components that consume a specific slice re-render, keeping the UI smooth as users update quantities.
 
-**React Hook Form** — Validation runs on the native DOM without controlled inputs, keeping the form performant. All six fields validate with regex patterns before the user can advance.
+**React Hook Form** : Validation runs on the native DOM without controlled inputs, keeping the form performant. All six fields validate with regex patterns before the user can advance.
 
-**Component isolation** — Each step (`CartStep`, `ShippingStep`, `PaymentStep`) is fully self-contained. Swapping or reordering steps requires no refactoring elsewhere.
+**Component isolation** : Each step (`CartStep`, `ShippingStep`, `PaymentStep`) is fully self-contained. Swapping or reordering steps requires no refactoring elsewhere.
 
 ---
 
@@ -53,9 +53,9 @@ src/
 Cart ──→ Shipping Address ──→ Payment & Confirmation ──→ Order Success
 ```
 
-1. **Cart** — Products loaded via SSR. Quantity stepper, remove items, live subtotal + shipping total.
-2. **Shipping** — Pre-filled form. Validates email format, 10-digit phone, 6-digit PIN Code. Persists to Zustand.
-3. **Payment** — Final order summary + saved address. Supports online payment (Visa / Mastercard / UPI / RuPay / Amex) or COD. Simulates a 1.5s processing state, then shows "Order Placed" success screen.
+1. **Cart** : Products loaded via SSR. Quantity stepper, remove items, live subtotal + shipping total.
+2. **Shipping** : Pre-filled form. Validates email format, 10-digit phone, 6-digit PIN Code. Persists to Zustand.
+3. **Payment** : Final order summary + saved address. Supports online payment (Visa / Mastercard / UPI / RuPay / Amex) or COD. Simulates a 1.5s processing state, then shows "Order Placed" success screen.
 
 ---
 
@@ -63,7 +63,7 @@ Cart ──→ Shipping Address ──→ Payment & Confirmation ──→ Order
 
 ```bash
 # 1. Clone the repo
-git clone <your-repo-url>
+git clone https://github.com/SamirXR/Ecoyaan-Assignment.git
 cd ecoyaan-checkout
 
 # 2. Install dependencies
@@ -100,7 +100,7 @@ No environment variables required — everything runs locally.
 
 ---
 
-_Built with care for the Ecoyaan team. Sustainability made easy._
+_Built by Samir :)_
 
 ## Getting Started
 
@@ -122,14 +122,6 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
